@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ustore</title>
+    <meta name="author" content="Arkadii Pihuzov">
+    <meta name="description" content="ucode_ustore">
+    <meta name="keywords" content="ustore, online_shop">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+<header>
+    <div class="header_intro">
+        <div class="logo">
+            <a id="link_logo" href="#">
+                <img src="assets/images/logo.jpg" alt="logo">
+                <h3>outdoor shop</h3>
+            </a>            
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit" onclick="">Search<i class="fa fa-search"></i></button>
+        </div>
+        <div>
+            <span id="phone">(000) 123-45-67</span>
+        </div>
+    </div>
+    <div class="nav_cart">
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Catalog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </nav>
+        <div id="cart">
+            <div class="cart">
+                <img id="img_cart" src="assets/images/cart.png" alt="cart" width="35">
+            </div>
+            <div class="dropcart"></div>
+        </div>
+    </div>
+</header>
+<section class="main">
+    <div class="bread">
+        <div>
+            <ul class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Catalog</a></li>
+                <li>Backpacks</li>
+            </ul>
+        </div>
+        <div>
+            <h1>Backpacks</h1>
+        </div>
+    </div>
+    <div class="main_content">
+    <aside>
+        <h3>Filters</h3>
+        <div>
+            <div class="hide" onclick="hideBrand()"><p>Brand</p><p>&mdash;</p></div>
+            <div class="fbrand">
+                <input id="LS" type="checkbox" value="La Sportiva" onchange="filterBrand()">
+                <label for="LS">La Sportiva</label><br>
+                <input id="Salewa" type="checkbox" value="Salewa" onchange="filterBrand()">
+                <label for="Salewa">Salewa</label><br>
+                <input id="TNF" type="checkbox" value="The North Face" onchange="filterBrand()">
+                <label for="TNF">The North Face</label><br>
+                <input id="Salomon" type="checkbox" value="Salomon" onchange="filterBrand()">
+                <label for="Salomon">Salomon</label><br>
+            </div>
+        </div>
+        <div>
+            <div class="hide" onclick="hideCap()"><p>Capacity</p><p>&mdash;</p></div>
+            <div class="capacity">
+                <input id="10_19" type="checkbox" value="10_19" onchange="filterLiters()">
+                <label for="10_19">10-19 liters</label><br>
+                <input id="20_29" type="checkbox" value="20_29" onchange="filterLiters()">
+                <label for="20_29">20-29 liters</label><br>
+                <input id="30_39" type="checkbox" value="30_39" onchange="filterLiters()">
+                <label for="30_39">30-39 liters</label><br>
+                <input id="40" type="checkbox" value="40" onchange="filterLiters()">
+                <label for="40">more than 40 liters</label><br>
+            </div>
+        </div>
+    </aside>
+    <div>
+        <div id="count_sort">
+            <p id="count">Showing 26 products</p>
+            <div>
+                <label for="sort">Sort By</label>
+                <select id="sort" onchange="sort.call(this)">
+                    <option value="0">Default</option>
+                    <option value="1">Price: Low to High</option>
+                    <option value="2">Prihe: High to Low</option>
+                </select>
+            </div>
+        </div>
+    <div>
+        <ul class="products_list">
+            <li class="product" value="30"><img src="assets/images/products/item1.jpg" alt="Backpack"><span class="title">La Sportiva Alpine 30L</span><span class="brand">La Sportiva</span><span class="price">2758.99</span>
+                <span class='liters'>30</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="0" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="18"><img src="assets/images/products/item2.jpg" height="200" alt="Backpack"><span class="title">La Sportiva Laspo</span><span class="brand">La Sportiva</span><span class="price">1260.99</span>
+                <span class='liters'>18</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="1" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="70"><img src="assets/images/products/item3.jpg" alt="Backpack"><span class="title">Salewa Cammino 70+10L</span><span class="brand">Salewa</span><span class="price">3634.49</span>
+                <span class='liters'>70</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="2" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="24"><img src="assets/images/products/item4.jpg" alt="Backpack"><span class="title">The North Face Chimera 24L</span><span class="brand">The North Face</span><span class="price">2321.99</span>
+                <span class='liters'>24</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="3" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="20"><img src="assets/images/products/item5.jpg" alt="Backpack"><span class="title">Salomon Trailblazer 10</span><span class="brand">Salomon</span><span class="price">1142.49</span>
+                <span class='liters'>20</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="4" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="45"><img src="assets/images/products/item6.jpg" alt="Backpack"><span class="title">La Sportiva Travel 45L</span><span class="brand">La Sportiva</span><span class="price">3283.99</span>
+                <span class='liters'>45</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="5" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="50"><img src="assets/images/products/item7.jpg" alt="Backpack"><span class="title">Salewa Cammino 50+10L</span><span class="brand">Salewa</span><span class="price">3179.99</span>
+                <span class='liters'>50</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="6" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="27"><img src="assets/images/products/item8.jpg" alt="Backpack"><span class="title">The North Face Groundwork</span><span class="brand">The North Face</span><span class="price">2439</span>
+                <span class='liters'>27</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="7" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="30"><img src="assets/images/products/item9.jpg" alt="Backpack"><span class="title">Salomon Trailblazer 30</span><span class="brand">Salomon</span><span class="price">1551.99</span>
+                <span class='liters'>30</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="8" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="25"><img src="assets/images/products/item10.jpg" alt="Backpack"><span class="title">Salewa Alp Trainer 20L</span><span class="brand">Salewa</span><span class="price">2839.49</span>
+                <span class='liters'>25</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="9" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="18"><img src="assets/images/products/item11.jpg" alt="Backpack"><span class="title">Salewa Firepad 16L BP</span><span class="brand">Salewa</span><span class="price">1589.99</span>
+                <span class='liters'>18</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="10" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="20"><img src="assets/images/products/item12.jpg" alt="Backpack"><span class="title">Salomon Trailblazer 20</span><span class="brand">Salomon</span><span class="price">1335.99</span>
+                <span class='liters'>20</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="11" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="35"><img src="assets/images/products/item13.jpg" alt="Backpack"><span class="title">The North Face Waterproof Roll Top</span><span class="brand">The North Face</span><span class="price">1736.99</span>
+                <span class='liters'>35</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="12" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="25"><img src="assets/images/products/item14.jpg" alt="Backpack"><span class="title">Salewa Ultra Train 18L</span><span class="brand">Salewa</span><span class="price">2044.49</span>
+                <span class='liters'>25</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="13" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="35"><img src="assets/images/products/item15.jpg" alt="Backpack"><span class="title">Salewa Alp Trainer 25L</span><span class="brand">Salewa</span><span class="price">2965.99</span>
+                <span class='liters'>35</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="14" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="10"><img src="assets/images/products/item16.jpg" alt="Backpack"><span class="title">Salomon Trailblazer 10</span><span class="brand">Salomon</span><span class="price">1261.49</span>
+                <span class='liters'>10</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="15" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="18"><img src="assets/images/products/item17.jpg" height="200" alt="Backpack"><span class="title">La Sportiva Laspo</span><span class="brand">La Sportiva</span><span class="price">1379.49</span>
+                <span class='liters'>18</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="16" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="28"><img src="assets/images/products/item18.jpg" alt="Backpack"><span class="title">The North Face Kuhtai Evo 28L</span><span class="brand">The North Face</span><span class="price">2392.49</span>
+                <span class='liters'>28</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="17" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="35"><img src="assets/images/products/item19.jpg" alt="Backpack"><span class="title">Salewa Alp Trainer 35+3L</span><span class="brand">Salewa</span><span class="price">4157.99</span>
+                <span class='liters'>35</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="18" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="95"><img src="assets/images/products/item20.jpg" alt="Backpack"><span class="title">The North Face Gilman Duffel L</span><span class="brand">The North Face</span><span class="price">3963.99</span>
+                <span class='liters'>95</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="19" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="30"><img src="assets/images/products/item21.jpg" alt="Backpack"><span class="title">Salomon Trailblazer 30L</span><span class="brand">Salomon</span><span class="price">1551.99</span>
+                <span class='liters'>30</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="20" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="24"><img src="assets/images/products/item22.jpg" alt="Backpack"><span class="title">The North Face Chimera 24L</span><span class="brand">The North Face</span><span class="price">2321.99</span>
+                <span class='liters'>24</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="21" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="12"><img src="assets/images/products/item23.jpg" alt="Backpack"><span class="title">Salewa Minitrek 12L</span><span class="brand">Salewa</span><span class="price">908.99</span>
+                <span class='liters'>12</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="22" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="38"><img src="assets/images/products/item24.jpg" alt="Backpack"><span class="title">The North Face Hydra 38L RC</span><span class="brand">The North Face</span><span class="price">3370.99</span>
+                <span class='liters'>38</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="23" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="15"><img src="assets/images/products/item25.jpg" alt="Backpack"><span class="title">Salewa Vector UL 15L</span><span class="brand">Salewa</span><span class="price">501.99</span>
+                <span class='liters'>15</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="24" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+            <li class="product" value="30"><img src="assets/images/products/item26.jpg" alt="Backpack"><span class="title">Salomon Trailblazer 30L</span><span class="brand">Salomon</span><span class="price">1558.49</span>
+                <span class='liters'>30</span>
+                <div class="add_to_cart">
+                    <span class="avaliable">Avaliable</span>
+                    <button data-id="25" class="add_item">Add to cart</button>
+                </div>
+                <div class="descript"><span>description</span></div>
+            </li>
+        </ul>
+    </div>
+    <div class="pagination">
+        <a class="paginat active" onclick="changePage(1)">1</a>
+        <a class="paginat" onclick="changePage(2)">2</a>
+        <a class="paginat" onclick="changePage(3)">3</a>
+        <a class="paginat" onclick="changePage(4)">4</a>
+        <a class="paginat" onclick="changePage(5)">5</a>
+    </div>
+    </div>
+</section>
+<footer>
+
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

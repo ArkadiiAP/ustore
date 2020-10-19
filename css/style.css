@@ -1,0 +1,146 @@
+/* font-family: 'Libre Baskerville', serif; */
+/* font-family: 'Krona One', sans-serif; */
+.title{
+    font-family: 'Krona One', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+}
+.brand{
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bold;
+    color: darkgray;
+    font-size: 12px;
+}
+.add_to_cart{
+    display: flex;
+    justify-content: space-between;
+}
+.avaliable{
+    font-family: 'Libre Baskerville', serif;
+}
+.main{
+    margin: auto;
+    max-width: 1000px;
+}
+.main_content{
+    display: flex;
+    justify-content: space-between;
+}
+.products_list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    list-style: none;
+    padding: 0;
+}
+.products_list li{
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+.products_list li img{
+    float: left;
+}
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+.pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+.pagination a:hover:not(.active) {background-color: #ddd;}
+.pagination{
+    width: inherit;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+}
+/*.liters{
+    display: none;
+}*/
+aside{
+    min-width: 145px;
+    width: 200px;
+}
+.hide{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(8, 130, 77, 0.5);
+    padding: 0 5px;
+}
+html{
+    min-width: 390px;
+}
+@media (max-width:1000px){
+    .products_list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+        list-style: none;
+        padding: 0;
+    }
+    .main_content{
+        justify-content: space-evenly;
+    }
+}
+@media (max-width:760px){
+    .products_list{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        list-style: none;
+        padding: 0;
+    }
+    .main_content{
+        justify-content: space-evenly;
+    }
+}
+.product{
+    position: relative;
+}
+.descript{
+    display: none;
+    position: absolute;
+    top: -52%;
+    width: 100%;
+    padding: 0;
+    margin: -12px;
+    width: 220px;
+    height: 185px;
+}
+.product:hover .descript{
+    display: block;
+    z-index: 2;
+    border: 2px solid gray;
+    border-style: solid solid none solid;
+    background-color: white;
+}
+.liters{
+    display: none;
+}
+#count_sort{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+#sort{
+    height: 20px;
+    margin: 16px 0;
+}
+#count_sort label{
+    height: 20px;
+    margin: 16px 0;
+}
+.price{
+    font-family: 'Krona One', sans-serif;
+    text-align: right;
+}

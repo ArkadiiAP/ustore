@@ -246,6 +246,7 @@ function filterLiters() {
     filter();
 }
 
+//
 function filter(){
     for(i=0;i<itemsAll.length;i++){
         if(itemsAll[i].getAttribute('name1') == 'hidden'||itemsAll[i].getAttribute('name') == 'hidden'){
@@ -261,7 +262,7 @@ function filter(){
         }
     }
     let showcount = document.querySelector('#count');
-    showcount.innerHTML = `Showing ${countItems} products`
+    showcount.innerHTML = `Showing ${countItems} products`;
     let countPages = countItems/6;
     let page = document.getElementsByClassName('paginat');
     for(let i=0; i<page.length;i++){
@@ -280,25 +281,7 @@ function filter(){
     changePage(1);
 }
 
-/*let dropcart = document.querySelector('.dropcart');
-let titleInCart;
-let addcart;
-let titlecard;
-let count = 0;
-let price;
-function addToCart(m) {
-    if(count == 0){
-        titleInCart = dropcart.appendChild(document.createElement('p'));
-        addcart = m.parentNode.parentNode;
-        titlecard = addcart.childNodes;
-        price = titlecard[3].innerHTML;
-        titleInCart.innerHTML = titlecard[1].innerHTML + ` ${count + 1}   price: ${price*(count+1)}`;
-    }else{
-        titleInCart.innerHTML = titlecard[1].innerHTML + ` ${count + 1}   price: ${price*(count+1)}`;
-    }
-    count++;
-}*/
-
+//фильтры
 let flagCap = 0;
 let flagBrand = 0;
 let capacity = document.querySelector('.capacity');
@@ -348,6 +331,7 @@ function setCartData(o){
     return false;
 }
 
+//добавление товара в корзину
 function addToCart(e){
     this.disabled = true; // блокируем кнопку на время операции с корзиной
     var cartData = getCartData() || {}, // получаем данные корзины или создаём новый объект, если данных еще нет
@@ -368,10 +352,16 @@ function addToCart(e){
    return false;
 }
 
+let not_avaliable = document.querySelectorAll('.avaliable');
 for(var i = 0; i < itemsAll.length; i++){
     addEvent(itemsAll[i].querySelector('.add_item'), 'click', addToCart);
+    if(not_avaliable[i].innerHTML == 'Not avaliable'){
+        itemsAll[i].querySelector('.add_item').disabled = true;
+    }
 }
 
+//показываем содержимое корзины
+addEvent(document.querySelector(".cart"), 'mouseover', openCart);
 function openCart(e){
     cartData = getCartData(), // вытаскиваем все данные корзины
     totalItems = '',
@@ -407,16 +397,12 @@ function openCart(e){
     return false;
 }
 
-addEvent(document.querySelector(".cart"), 'mouseover', openCart);
+
+//удаление товара из корзины
 function remove(n){
-    // let id_remove = n.getAttribute;
-    // n.parentNode.parentNode
-    // localStorage.removeItem('cart');
-    // localStorage.clear();
     n.disabled = true;
     var cartData = getCartData() || {}; // получаем данные корзины или создаём новый объект, если данных еще нет
     let itemId = n.parentNode.getAttribute('data_id');
-    // let itemId = remove_item.getAttribute('data_id');
     if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
         delete cartData[itemId];
         if(!cartData.hasOwnProperty(itemId)){
@@ -439,6 +425,7 @@ function remove(n){
 }
 
 
+//Сортировка по дефолу. цена мин-макс. макс-мин
 function sort(){
     let price = document.querySelectorAll('.product');
     let pricearr = [];

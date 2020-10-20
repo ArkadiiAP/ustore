@@ -23,8 +23,7 @@
             </a>            
         </div>
         <div class="search-container">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit" onclick="">Search<i class="fa fa-search"></i></button>
+            
         </div>
         <div>
             <span id="phone">(000) 123-45-67</span>
@@ -38,23 +37,25 @@
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contacts</a></li>
             </ul>
-        </nav>
-        <div id="cart">
-            <div class="cart">
-                <img id="img_cart" src="assets/images/cart.png" alt="cart" width="35">
-            </div>
-            <div class="dropcart"></div>
-        </div>
+        </nav>        
     </div>
 </header>
 <section class="main">
     <div class="bread">
-        <div>
-            <ul class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Catalog</a></li>
-                <li>Backpacks</li>
-            </ul>
+        <div class="bread_cart">    
+            <div>
+                <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Catalog</a></li>
+                    <li>Backpacks</li>
+                </ul>
+            </div>
+            <div id="cart">
+                <div class="cart">
+                    <img id="img_cart" src="assets/images/cart.png" alt="cart" width="35">
+                </div>
+                <div class="dropcart"></div>
+            </div>
         </div>
         <div>
             <h1>Backpacks</h1>
@@ -147,7 +148,7 @@
             <li class="product" value="45"><img src="assets/images/products/item6.jpg" alt="Backpack"><span class="title">La Sportiva Travel 45L</span><span class="brand">La Sportiva</span><span class="price">3283.99</span>
                 <span class='liters'>45</span>
                 <div class="add_to_cart">
-                    <span class="avaliable">Avaliable</span>
+                    <span class="avaliable">Not avaliable</span>
                     <button data-id="5" class="add_item">Add to cart</button>
                 </div>
                 <div class="descript"><span>description</span></div>
@@ -171,7 +172,7 @@
             <li class="product" value="30"><img src="assets/images/products/item9.jpg" alt="Backpack"><span class="title">Salomon Trailblazer 30</span><span class="brand">Salomon</span><span class="price">1551.99</span>
                 <span class='liters'>30</span>
                 <div class="add_to_cart">
-                    <span class="avaliable">Avaliable</span>
+                    <span class="avaliable">Not avaliable</span>
                     <button data-id="8" class="add_item">Add to cart</button>
                 </div>
                 <div class="descript"><span>description</span></div>
@@ -203,7 +204,7 @@
             <li class="product" value="35"><img src="assets/images/products/item13.jpg" alt="Backpack"><span class="title">The North Face Waterproof Roll Top</span><span class="brand">The North Face</span><span class="price">1736.99</span>
                 <span class='liters'>35</span>
                 <div class="add_to_cart">
-                    <span class="avaliable">Avaliable</span>
+                    <span class="avaliable">Not avaliable</span>
                     <button data-id="12" class="add_item">Add to cart</button>
                 </div>
                 <div class="descript"><span>description</span></div>
@@ -324,7 +325,10 @@
     </div>
 </section>
 <footer>
-
+    <div class="foot">
+        <img src="assets/images/logo.jpg" width="100">
+        <p>&copy;Copyright 2020</p>
+    </div>
 </footer>
 <script src="js/script.js"></script>
 </body>
